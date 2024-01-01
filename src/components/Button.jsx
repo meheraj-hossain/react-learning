@@ -14,7 +14,7 @@ class Button extends React.Component {
         const {changeFunction, locale} = this.props
         return (
             <button type="submit" onClick={() => changeFunction(locale)}>
-                Click to Change Locale
+                { locale === "bn-BD" ? "Change to Bengali" : "ইংরেজিতে পরিবর্তন করুন "}
             </button>
         )
     }
