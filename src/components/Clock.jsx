@@ -1,40 +1,43 @@
 import React from "react";
-import PropTypes from "prop-types";
+import Button from "./Button.jsx";
 
 class Clock extends React.Component {
-    state = { date: new Date() };
-
+    state = {date: new Date(), locale: "en-US"};
 
     componentDidMount() {
-        this.clock = setInterval( () => this.changeTime(), 1000);
+        this.clock = setInterval(() => this.changeTime(), 1000);
     }
 
     componentWillUnmount() {
         clearInterval(this.clock)
     }
 
-    changeTime () {
+    change = (locale) => {
         this.setState({
-            date : new Date(),
+            locale
+        })
+    }
+
+    changeTime() {
+        this.setState({
+            date: new Date(),
         })
     }
 
     render() {
-        const {date} = this.state;
-        const { locale } = this.props;
+        const {date, locale} = this.state;
 
         return (
-            <h1 className="heading">
-                <span className="text">
-                    { date.toLocaleTimeString(locale) }
-                </span>
-            </h1>
+            <>
+                <h1 className="heading">
+                    <span className="text">
+                        {date.toLocaleTimeString(locale)}
+                    </span>
+                </h1>
+                <Button locale="bn-BD" changeFunction={this.change}/>
+            </>
         )
     }
-}
-
-Clock.propTypes = {
-    locale: PropTypes.string.isRequired,
 }
 
 export default Clock;
