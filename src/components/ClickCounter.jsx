@@ -1,7 +1,5 @@
-import withCounter from "./HOC/withCounter.jsx";
 import PropTypes from "prop-types";
-
-const ClickCounter = ({count, incrementCount}) => {
+export default function ClickCounter ({count, incrementCount}) {
     return (
         <div>
             <button type="button" onClick={incrementCount}>
@@ -13,8 +11,8 @@ const ClickCounter = ({count, incrementCount}) => {
 
 ClickCounter.propTypes = {
     count: PropTypes.number.isRequired,
-    incrementCount: PropTypes.func.isRequired,
+    incrementCount: PropTypes.func.isRequired
 }
 
-export default withCounter(ClickCounter);
+
 

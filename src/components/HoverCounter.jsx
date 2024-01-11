@@ -1,7 +1,6 @@
-import withCounter from "./HOC/withCounter.jsx";
 import PropTypes from "prop-types";
 
-const HoverCounter = ({count, incrementCount}) => {
+export default function HoverCounter({count, incrementCount}) {
     return (
         <div>
             <h1 onMouseOver={incrementCount}>
@@ -13,8 +12,5 @@ const HoverCounter = ({count, incrementCount}) => {
 
 HoverCounter.propTypes = {
     count: PropTypes.number.isRequired,
-    incrementCount: PropTypes.func.isRequired,
+    incrementCount: PropTypes.func.isRequired
 }
-
-export default withCounter(HoverCounter);
-
