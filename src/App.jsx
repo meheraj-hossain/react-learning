@@ -1,23 +1,27 @@
 import Counter from "./components/Counter.jsx";
 import ClickCounter from "./components/ClickCounter.jsx";
-import HoverCounter from "./components/HoverCounter.jsx";
+import Section from "./components/Section.jsx";
+import React from "react";
+import ThemeContext from "./Contexts/ThemeContext.jsx";
 
-function App() {
-    return (
-        <div>
-            <Counter>
-                { (count, incrementCount) => (
-                    <ClickCounter incrementCount={incrementCount} count={count} />
-                )}
-            </Counter>
 
-            <Counter>
-                { (count, incrementCount) => (
-                    <HoverCounter incrementCount={incrementCount} count={count} />
-                )}
-            </Counter>
-        </div>
-    );
+export default class App extends React.Component{
+    state = {
+        theme: "dark"
+    }
+    render() {
+        const {theme} = this.state;
+        return (
+            <div>
+                <Counter>
+                    { (count, incrementCount) => (
+                        <ClickCounter incrementCount={incrementCount} count={count} />
+                    )}
+                </Counter>
+                <ThemeContext.Provider value={{theme}} >
+                    <Section />
+                </ThemeContext.Provider>
+            </div>
+        );
+    }
 }
-
-export default App;
