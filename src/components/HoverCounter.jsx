@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function HoverCounter({count, incrementCount, theme}) {
+export default function HoverCounter({count, incrementCount, theme, switchTheme}) {
     const style = theme === "dark" ? {
         backgroundColor:'#000000',
         color: '#ffffff'
@@ -11,6 +11,9 @@ export default function HoverCounter({count, incrementCount, theme}) {
             <h1 onMouseOver={incrementCount} style={style}>
                 Hovered {count} times
             </h1>
+            <button type="button" onClick={switchTheme}>
+                Change Background
+            </button>
         </div>
     )
 }
@@ -18,5 +21,6 @@ export default function HoverCounter({count, incrementCount, theme}) {
 HoverCounter.propTypes = {
     count: PropTypes.number.isRequired,
     theme: PropTypes.string.isRequired,
-    incrementCount: PropTypes.func.isRequired
+    incrementCount: PropTypes.func.isRequired,
+    switchTheme: PropTypes.func.isRequired
 }

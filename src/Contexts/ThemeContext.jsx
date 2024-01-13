@@ -1,6 +1,8 @@
-import createContext from '../lib/Context.jsx'
+import React from "react";
 
-const ThemeContext = createContext();
+const ThemeContext = React.createContext({
+    theme: "dark"
+});
 
 export default ThemeContext;
 
