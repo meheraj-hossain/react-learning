@@ -1,5 +1,7 @@
+import React from "react";
 import PropTypes from "prop-types";
-export default function Button({handleClick, children}) {
+// eslint-disable-next-line react-refresh/only-export-components
+function Button({handleClick, children}) {
     console.log(`rendering button ${children}`);
     return(
         <div>
@@ -9,6 +11,9 @@ export default function Button({handleClick, children}) {
         </div>
     )
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default React.memo(Button);
 
 Button.propTypes = {
     handleClick: PropTypes.func.isRequired,

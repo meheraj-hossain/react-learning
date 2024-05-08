@@ -1,5 +1,7 @@
+import React from "react";
 import PropTypes from "prop-types";
-export default function ShowCount({count, title}) {
+// eslint-disable-next-line react-refresh/only-export-components
+function ShowCount({count, title}) {
     console.log(`rendering ${title}`);
 
     return (
@@ -8,6 +10,9 @@ export default function ShowCount({count, title}) {
         </p>
     )
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export default React.memo(ShowCount);
 
 ShowCount.propTypes = {
     count: PropTypes.number.isRequired,
