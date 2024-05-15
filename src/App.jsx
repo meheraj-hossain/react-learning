@@ -1,10 +1,12 @@
-import ComponentOne from "./Components/ComponentOne.jsx";
-import ComponentTwo from "./Components/ComponentTwo.jsx";
+import Logo from "./components/Logo.jsx";
+import './assets/global.css'
 export default function App() {
     return (
-        <div>
-            <ComponentOne />
-            <ComponentTwo />
+        <div className="App">
+            <h2>
+                Inline, Module, Stylesheet CSS
+            </h2>
+            <Logo />
         </div>
     )
 }
