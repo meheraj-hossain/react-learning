@@ -1,11 +1,9 @@
-// import CounterByPrimitive from "./Components/CounterByPrimitive.jsx";
-import CounterByObject from "./Components/CounterByObject.jsx";
-export default function App () {
-
-
+// import GetPostByUseState from "./Components/UseReducerWithUseEffect/GetPostByUseState.jsx";
+import GetPostByUseReducer from "./Components/UseReducerWithUseEffect/GetPostByUseReducer.jsx";
+export default function App() {
     return (
-        <div className="app">
-            <CounterByObject />
+        <div>
+            <GetPostByUseReducer />
         </div>
     )
 }
