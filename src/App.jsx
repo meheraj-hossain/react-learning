@@ -1,9 +1,10 @@
-// import GetPostByUseState from "./Components/UseReducerWithUseEffect/GetPostByUseState.jsx";
-import GetPostByUseReducer from "./Components/UseReducerWithUseEffect/GetPostByUseReducer.jsx";
+import ComponentOne from "./Components/ComponentOne.jsx";
+import ComponentTwo from "./Components/ComponentTwo.jsx";
 export default function App() {
     return (
         <div>
-            <GetPostByUseReducer />
+            <ComponentOne />
+            <ComponentTwo />
         </div>
     )
 }
