@@ -1,20 +1,25 @@
-import "./assets/css/dark.css"
-import GlobalStyle from "./Components/Styles/Global.styles.jsx";
-import Tutorial from "./Components/Tutorial.jsx";
-import {ThemeProvider} from "styled-components";
-import {dark, light} from "./Components/Styles/Theme.jsx";
-// import {useState} from "react";
+import {Navigate, Route, Routes} from "react-router-dom";
+import Header from "./components/Header.jsx";
+import Index from "./components/Index.jsx";
+import Posts from "./components/Posts.jsx";
+import AboutUs from "./components/AboutUs.jsx";
+import Post from "./components/Post.jsx";
 
 export default function App() {
-    // const [theme, setTheme] = useState('dark');
-
     return (
-        <>
-            <GlobalStyle/>
-            <ThemeProvider theme={dark}>
-                <Tutorial/>
-            </ThemeProvider>
-        </>
+        <div className="App">
+            <Header />
+            <Routes>
+                <Route path="/" element={<Index />} >
+                    <Route path="profile" element={<p>Profile</p>} />
+                </Route>
+
+                <Route path="/index" element={<Navigate to="/" /> } />
+                <Route path="/about-us" element={<AboutUs />} />
+                <Route path="/posts" element={<Posts />} />
+                <Route path="/post/:post_id" element={<Post />} />
+            </Routes>
+        </div>
     )
 
 }
