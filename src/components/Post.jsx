@@ -4,7 +4,8 @@ export default function Post() {
     const params = useParams();
     const navigate = useNavigate();
     function goBack() {
-        navigate("/posts");
+        // navigate("/posts", {replace: true});
+        navigate(-1);
     }
     return(
         <>
